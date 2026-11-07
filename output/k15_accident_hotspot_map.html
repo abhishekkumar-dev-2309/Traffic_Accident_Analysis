@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9c7794f0f60fc10a9933abd2c4732ffa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+position: fixed;
+bottom: 30px;
+left: 30px;
+width: 210px;
+background-color: white;
+border: 2px solid grey;
+z-index: 9999;
+padding: 10px;
+font-size: 14px;
+">
+<b>Severity 4 Percentage</b><br>
+<span style="color:green;">●</span> Below 3%<br>
+<span style="color:orange;">●</span> 3% to below 5%<br>
+<span style="color:red;">●</span> 5% and above
+</div>
+    
+            <div class="folium-map" id="map_9c7794f0f60fc10a9933abd2c4732ffa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9c7794f0f60fc10a9933abd2c4732ffa = L.map(
+                "map_9c7794f0f60fc10a9933abd2c4732ffa",
+                {
+                    center: [39.5, -98.35],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_230ef1588216654b56ed14f29ae99c27 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_230ef1588216654b56ed14f29ae99c27.addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+            var circle_marker_d7dad17b913ba914cc65b2cf14ae51d1 = L.circleMarker(
+                [28.63540081281916, -82.01719233211104],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.813133333333333, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_2aec5140c3cd8564355e967150af8d1a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_36465b9af7b828a58cfcd321466debff = $(`<div id="html_36465b9af7b828a58cfcd321466debff" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 0<br>     <b>Total Accidents:</b> 468,788.0<br>     <b>Average Severity:</b> 2.144<br>     <b>Severity 4:</b> 1.70%<br>     <b>Latitude:</b> 28.6354<br>     <b>Longitude:</b> -82.0172     </div>`)[0];
+                popup_2aec5140c3cd8564355e967150af8d1a.setContent(html_36465b9af7b828a58cfcd321466debff);
+            
+        
+
+        circle_marker_d7dad17b913ba914cc65b2cf14ae51d1.bindPopup(popup_2aec5140c3cd8564355e967150af8d1a)
+        ;
+
+        
+    
+    
+            circle_marker_d7dad17b913ba914cc65b2cf14ae51d1.bindTooltip(
+                `<div>
+                     Cluster 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c17fac71ba19a67d24d4ab5fe3b50ad = L.circleMarker(
+                [34.00182548819173, -117.9913984751913],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.18626666666667, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_ff424ab5b0c2a95f462c1b174ea940a9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d1a655384260ead7cd8be03d26585377 = $(`<div id="html_d1a655384260ead7cd8be03d26585377" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 1<br>     <b>Total Accidents:</b> 1,031,176.0<br>     <b>Average Severity:</b> 2.193<br>     <b>Severity 4:</b> 0.73%<br>     <b>Latitude:</b> 34.0018<br>     <b>Longitude:</b> -117.9914     </div>`)[0];
+                popup_ff424ab5b0c2a95f462c1b174ea940a9.setContent(html_d1a655384260ead7cd8be03d26585377);
+            
+        
+
+        circle_marker_9c17fac71ba19a67d24d4ab5fe3b50ad.bindPopup(popup_ff424ab5b0c2a95f462c1b174ea940a9)
+        ;
+
+        
+    
+    
+            circle_marker_9c17fac71ba19a67d24d4ab5fe3b50ad.bindTooltip(
+                `<div>
+                     Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d3361a5b7f95acc21e397f4e1bf04fe = L.circleMarker(
+                [43.20635123349182, -93.86290049992162],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.36425, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_98bc229e181f1dba20ac8fa19ff9179c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e8499746170b9bddd161d94a39340ac = $(`<div id="html_2e8499746170b9bddd161d94a39340ac" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 2<br>     <b>Total Accidents:</b> 321,855.0<br>     <b>Average Severity:</b> 2.218<br>     <b>Severity 4:</b> 2.16%<br>     <b>Latitude:</b> 43.2064<br>     <b>Longitude:</b> -93.8629     </div>`)[0];
+                popup_98bc229e181f1dba20ac8fa19ff9179c.setContent(html_2e8499746170b9bddd161d94a39340ac);
+            
+        
+
+        circle_marker_3d3361a5b7f95acc21e397f4e1bf04fe.bindPopup(popup_98bc229e181f1dba20ac8fa19ff9179c)
+        ;
+
+        
+    
+    
+            circle_marker_3d3361a5b7f95acc21e397f4e1bf04fe.bindTooltip(
+                `<div>
+                     Cluster 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13231d1d4ef195513032d4dcd5d676ba = L.circleMarker(
+                [41.254808667635025, -74.12660041883117],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.043016666666666, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_ba3ef2f6f5e14a32319f1ad11a10d468 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d85ca7a4f3eb0411dde739144e875a33 = $(`<div id="html_d85ca7a4f3eb0411dde739144e875a33" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 3<br>     <b>Total Accidents:</b> 782,581.0<br>     <b>Average Severity:</b> 2.256<br>     <b>Severity 4:</b> 3.33%<br>     <b>Latitude:</b> 41.2548<br>     <b>Longitude:</b> -74.1266     </div>`)[0];
+                popup_ba3ef2f6f5e14a32319f1ad11a10d468.setContent(html_d85ca7a4f3eb0411dde739144e875a33);
+            
+        
+
+        circle_marker_13231d1d4ef195513032d4dcd5d676ba.bindPopup(popup_ba3ef2f6f5e14a32319f1ad11a10d468)
+        ;
+
+        
+    
+    
+            circle_marker_13231d1d4ef195513032d4dcd5d676ba.bindTooltip(
+                `<div>
+                     Cluster 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9e567dcbb1615cd9655be70da0f5c88 = L.circleMarker(
+                [31.713866648904368, -96.61363411430395],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.278633333333334, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_82219c9d9b585a4a7e3b982ed9d37f22 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1499de55b48cb8e9e05f64962b7b695a = $(`<div id="html_1499de55b48cb8e9e05f64962b7b695a" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 4<br>     <b>Total Accidents:</b> 676,718.0<br>     <b>Average Severity:</b> 2.208<br>     <b>Severity 4:</b> 1.33%<br>     <b>Latitude:</b> 31.7139<br>     <b>Longitude:</b> -96.6136     </div>`)[0];
+                popup_82219c9d9b585a4a7e3b982ed9d37f22.setContent(html_1499de55b48cb8e9e05f64962b7b695a);
+            
+        
+
+        circle_marker_b9e567dcbb1615cd9655be70da0f5c88.bindPopup(popup_82219c9d9b585a4a7e3b982ed9d37f22)
+        ;
+
+        
+    
+    
+            circle_marker_b9e567dcbb1615cd9655be70da0f5c88.bindTooltip(
+                `<div>
+                     Cluster 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_472367d2ba2300448b25f2a78b5286b6 = L.circleMarker(
+                [45.707965849262834, -121.59774209379684],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.16215, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_312968f0dd622e0a655ca6758b945927 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4b2828598c99324822292ad87d60379 = $(`<div id="html_a4b2828598c99324822292ad87d60379" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 5<br>     <b>Total Accidents:</b> 309,729.0<br>     <b>Average Severity:</b> 2.190<br>     <b>Severity 4:</b> 3.40%<br>     <b>Latitude:</b> 45.7080<br>     <b>Longitude:</b> -121.5977     </div>`)[0];
+                popup_312968f0dd622e0a655ca6758b945927.setContent(html_a4b2828598c99324822292ad87d60379);
+            
+        
+
+        circle_marker_472367d2ba2300448b25f2a78b5286b6.bindPopup(popup_312968f0dd622e0a655ca6758b945927)
+        ;
+
+        
+    
+    
+            circle_marker_472367d2ba2300448b25f2a78b5286b6.bindTooltip(
+                `<div>
+                     Cluster 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60d01d660346384b67dc6be57076f5b1 = L.circleMarker(
+                [34.84832860677954, -80.6697681259332],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.815566666666667, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_dc2019145eae5d5ca2d0de5e91ecf879 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_46f99aae150374b22d59ecd3a350c4dc = $(`<div id="html_46f99aae150374b22d59ecd3a350c4dc" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 6<br>     <b>Total Accidents:</b> 768,934.0<br>     <b>Average Severity:</b> 2.130<br>     <b>Severity 4:</b> 2.20%<br>     <b>Latitude:</b> 34.8483<br>     <b>Longitude:</b> -80.6698     </div>`)[0];
+                popup_dc2019145eae5d5ca2d0de5e91ecf879.setContent(html_46f99aae150374b22d59ecd3a350c4dc);
+            
+        
+
+        circle_marker_60d01d660346384b67dc6be57076f5b1.bindPopup(popup_dc2019145eae5d5ca2d0de5e91ecf879)
+        ;
+
+        
+    
+    
+            circle_marker_60d01d660346384b67dc6be57076f5b1.bindTooltip(
+                `<div>
+                     Cluster 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_959fd1aed5019cf8551d42671d9bd24a = L.circleMarker(
+                [38.02414768309428, -121.6009258751322],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.16005, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_22a5652ab2663027c7fe3767eb1d4a40 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5712e191d02835ff818a2dbf44cd13f4 = $(`<div id="html_5712e191d02835ff818a2dbf44cd13f4" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 7<br>     <b>Total Accidents:</b> 729,603.0<br>     <b>Average Severity:</b> 2.129<br>     <b>Severity 4:</b> 0.92%<br>     <b>Latitude:</b> 38.0241<br>     <b>Longitude:</b> -121.6009     </div>`)[0];
+                popup_22a5652ab2663027c7fe3767eb1d4a40.setContent(html_5712e191d02835ff818a2dbf44cd13f4);
+            
+        
+
+        circle_marker_959fd1aed5019cf8551d42671d9bd24a.bindPopup(popup_22a5652ab2663027c7fe3767eb1d4a40)
+        ;
+
+        
+    
+    
+            circle_marker_959fd1aed5019cf8551d42671d9bd24a.bindTooltip(
+                `<div>
+                     Cluster 7
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8046de44b794b77b414b8c97f8121054 = L.circleMarker(
+                [41.279188520532344, -85.8312625976354],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0543, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_c15bad1cd4b1b80492503018de607034 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_33ea9b4ab205ac6a5eed6405d5ea9eb7 = $(`<div id="html_33ea9b4ab205ac6a5eed6405d5ea9eb7" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 8<br>     <b>Total Accidents:</b> 603,258.0<br>     <b>Average Severity:</b> 2.382<br>     <b>Severity 4:</b> 4.60%<br>     <b>Latitude:</b> 41.2792<br>     <b>Longitude:</b> -85.8313     </div>`)[0];
+                popup_c15bad1cd4b1b80492503018de607034.setContent(html_33ea9b4ab205ac6a5eed6405d5ea9eb7);
+            
+        
+
+        circle_marker_8046de44b794b77b414b8c97f8121054.bindPopup(popup_c15bad1cd4b1b80492503018de607034)
+        ;
+
+        
+    
+    
+            circle_marker_8046de44b794b77b414b8c97f8121054.bindTooltip(
+                `<div>
+                     Cluster 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_686f2571b75458124f9f17e789b58a27 = L.circleMarker(
+                [30.73256331719419, -90.19692929430357],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_46673c8597f8821063da0769c90f686f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5dfe033c7c9a9d13d9893d8c9ec5d434 = $(`<div id="html_5dfe033c7c9a9d13d9893d8c9ec5d434" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 9<br>     <b>Total Accidents:</b> 199,299.0<br>     <b>Average Severity:</b> 2.157<br>     <b>Severity 4:</b> 2.14%<br>     <b>Latitude:</b> 30.7326<br>     <b>Longitude:</b> -90.1969     </div>`)[0];
+                popup_46673c8597f8821063da0769c90f686f.setContent(html_5dfe033c7c9a9d13d9893d8c9ec5d434);
+            
+        
+
+        circle_marker_686f2571b75458124f9f17e789b58a27.bindPopup(popup_46673c8597f8821063da0769c90f686f)
+        ;
+
+        
+    
+    
+            circle_marker_686f2571b75458124f9f17e789b58a27.bindTooltip(
+                `<div>
+                     Cluster 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67787c88e08756baeb1677b6c8948a77 = L.circleMarker(
+                [40.61945619569773, -108.66643440956246],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_c559d179cc1e94da906c79cb029452d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_470dc9deb11ef0efeb813601d6617dc0 = $(`<div id="html_470dc9deb11ef0efeb813601d6617dc0" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 10<br>     <b>Total Accidents:</b> 210,240.0<br>     <b>Average Severity:</b> 2.287<br>     <b>Severity 4:</b> 4.86%<br>     <b>Latitude:</b> 40.6195<br>     <b>Longitude:</b> -108.6664     </div>`)[0];
+                popup_c559d179cc1e94da906c79cb029452d8.setContent(html_470dc9deb11ef0efeb813601d6617dc0);
+            
+        
+
+        circle_marker_67787c88e08756baeb1677b6c8948a77.bindPopup(popup_c559d179cc1e94da906c79cb029452d8)
+        ;
+
+        
+    
+    
+            circle_marker_67787c88e08756baeb1677b6c8948a77.bindTooltip(
+                `<div>
+                     Cluster 10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c0e3b743c0a648e53ae492848648b1a = L.circleMarker(
+                [38.943492489944084, -77.35294917402933],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.633933333333333, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_a7c100d5a25a4ea30b809886f1437b52 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0dbdb0c5fbbcbb71ec8056996c1cd978 = $(`<div id="html_0dbdb0c5fbbcbb71ec8056996c1cd978" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 11<br>     <b>Total Accidents:</b> 638,036.0<br>     <b>Average Severity:</b> 2.270<br>     <b>Severity 4:</b> 6.65%<br>     <b>Latitude:</b> 38.9435<br>     <b>Longitude:</b> -77.3529     </div>`)[0];
+                popup_a7c100d5a25a4ea30b809886f1437b52.setContent(html_0dbdb0c5fbbcbb71ec8056996c1cd978);
+            
+        
+
+        circle_marker_3c0e3b743c0a648e53ae492848648b1a.bindPopup(popup_a7c100d5a25a4ea30b809886f1437b52)
+        ;
+
+        
+    
+    
+            circle_marker_3c0e3b743c0a648e53ae492848648b1a.bindTooltip(
+                `<div>
+                     Cluster 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a93eac63e9f916341d2d014dd2a61bf = L.circleMarker(
+                [26.005558187503937, -80.4282160589877],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.43045, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_1c3eba52d0ecd6bc0b97150bfcc7e39f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_df94a97c11528626ca4e6106fb77c7d8 = $(`<div id="html_df94a97c11528626ca4e6106fb77c7d8" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 12<br>     <b>Total Accidents:</b> 385,827.0<br>     <b>Average Severity:</b> 2.144<br>     <b>Severity 4:</b> 1.46%<br>     <b>Latitude:</b> 26.0056<br>     <b>Longitude:</b> -80.4282     </div>`)[0];
+                popup_1c3eba52d0ecd6bc0b97150bfcc7e39f.setContent(html_df94a97c11528626ca4e6106fb77c7d8);
+            
+        
+
+        circle_marker_9a93eac63e9f916341d2d014dd2a61bf.bindPopup(popup_1c3eba52d0ecd6bc0b97150bfcc7e39f)
+        ;
+
+        
+    
+    
+            circle_marker_9a93eac63e9f916341d2d014dd2a61bf.bindTooltip(
+                `<div>
+                     Cluster 12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7953437e6a9bf5de819afee921a4058 = L.circleMarker(
+                [33.321755866375305, -111.10400707357739],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_91eb679635f8135715d7d40fb5837ee3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_40d881624ef288471e5e93a017765f67 = $(`<div id="html_40d881624ef288471e5e93a017765f67" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 13<br>     <b>Total Accidents:</b> 199,829.0<br>     <b>Average Severity:</b> 2.127<br>     <b>Severity 4:</b> 2.90%<br>     <b>Latitude:</b> 33.3218<br>     <b>Longitude:</b> -111.1040     </div>`)[0];
+                popup_91eb679635f8135715d7d40fb5837ee3.setContent(html_40d881624ef288471e5e93a017765f67);
+            
+        
+
+        circle_marker_d7953437e6a9bf5de819afee921a4058.bindPopup(popup_91eb679635f8135715d7d40fb5837ee3)
+        ;
+
+        
+    
+    
+            circle_marker_d7953437e6a9bf5de819afee921a4058.bindTooltip(
+                `<div>
+                     Cluster 13
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c73f10117a92a8f3ce5dc7c7d8220f1a = L.circleMarker(
+                [34.55143596046265, -85.8908730552525],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.708683333333333, "stroke": true, "weight": 3}
+            ).addTo(map_9c7794f0f60fc10a9933abd2c4732ffa);
+        
+    
+        var popup_9a19c21a65c8fe5f55bbcc1372452ec2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c7f9af3febd57ddaa605a1ea2fc3080 = $(`<div id="html_8c7f9af3febd57ddaa605a1ea2fc3080" style="width: 100.0%; height: 100.0%;">     <b>Cluster:</b> 14<br>     <b>Total Accidents:</b> 402,521.0<br>     <b>Average Severity:</b> 2.336<br>     <b>Severity 4:</b> 4.21%<br>     <b>Latitude:</b> 34.5514<br>     <b>Longitude:</b> -85.8909     </div>`)[0];
+                popup_9a19c21a65c8fe5f55bbcc1372452ec2.setContent(html_8c7f9af3febd57ddaa605a1ea2fc3080);
+            
+        
+
+        circle_marker_c73f10117a92a8f3ce5dc7c7d8220f1a.bindPopup(popup_9a19c21a65c8fe5f55bbcc1372452ec2)
+        ;
+
+        
+    
+    
+            circle_marker_c73f10117a92a8f3ce5dc7c7d8220f1a.bindTooltip(
+                `<div>
+                     Cluster 14
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

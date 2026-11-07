@@ -1,0 +1,9 @@
+1. The dataset contains 7,728,394 accident records.
+2. Geographic accident clustering was performed using K-Means.
+3. Grid-based analysis was used to identify accident hotspots.
+4. A 50:50 density and severity weighting strategy was used for priority scoring.
+5. Tuned Random Forest achieved 71.27% accuracy on the random test set.
+6. Temporal Random Forest achieved 87.45% accuracy on the later-period test set.
+7. Temporal model minority-class recall remains very low.
+8. Model accuracy should be interpreted alongside Macro F1 and Balanced Accuracy.
+9. The prediction system classifies accident severity, not accident occurrence probability.
